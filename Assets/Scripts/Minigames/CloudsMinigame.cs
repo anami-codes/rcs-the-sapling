@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CloudsMinigame : BaseMinigame
 {
@@ -43,10 +40,9 @@ public class CloudsMinigame : BaseMinigame
     public override void EndMinigame()
     {
         base.EndMinigame();
-        gameManager.StartMinigame( 0 );
     }
 
     private Cloud[] clouds;
-    public Vector2 minPos;
-    public Vector2 maxPos;
+    private Vector2 minPos;
+    private Vector2 maxPos;
 }
