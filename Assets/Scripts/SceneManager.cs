@@ -35,5 +35,7 @@ public class SceneManager : MonoBehaviour
         string stateName = "Stage" + gameStage + "_";
         stateName += (isNight) ? "Night" : "Day";
         scene.tree[index].Play(stateName, 0);
+        scene.root[index].Play(stateName, 0);
+        scene.background[index].Play(stateName, 0);
     }
 }

@@ -38,10 +38,11 @@ public class GameManager : MonoBehaviour
             sceneManager.ChangeState(gameStage, isNight, false);
             return;
         } 
-        else if (gameStage == 3)
+        else if (gameStage == 4 && isNight)
         {
             gameStage = 0;
             isNight = false;
+            sceneManager.scene.animator.Play("Idle", 0);
             sceneManager.ChangeState(gameStage, isNight);
             return;
         }
