@@ -38,18 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BackgroundBottom
-    uniqueID: 1324391319
-    locked: 0
-  - name: Root
-    uniqueID: 1402206031
-    locked: 0
-  - name: BackgroundTop
-    uniqueID: 1546440343
+  - name: BackScene
+    uniqueID: 4139526573
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Tree
-    uniqueID: 1586073215
+  - name: FrontScene
+    uniqueID: 2446513013
     locked: 0

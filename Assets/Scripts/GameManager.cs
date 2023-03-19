@@ -8,12 +8,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        sceneManager = gameObject.GetComponent<SceneManager>();
     }
 
     void Update()
     {
-        
+        sceneManager.GameUpdate( Time.deltaTime );
     }
 
     public void StartMinigame (int minigameId)
@@ -28,4 +28,39 @@ public class GameManager : MonoBehaviour
             screens[minigameId].GetComponent<BaseMinigame>().StartMinigame(this);
         }
     }
+
+    public void ChangeState ()
+    {
+        if (gameStage == 0)
+        {
+            gameStage++;
+            isNight = false;
+            sceneManager.ChangeState(gameStage, isNight, false);
+            return;
+        } 
+        else if (gameStage == 3)
+        {
+            gameStage = 0;
+            isNight = false;
+            sceneManager.ChangeState(gameStage, isNight);
+            return;
+        }
+
+        if (isNight)
+        {
+            gameStage++;
+            isNight = false;
+        }
+        else
+        {
+            isNight = true;
+        }
+
+        sceneManager.ChangeState(gameStage, isNight);
+    }
+
+    private SceneManager sceneManager;
+
+    private int gameStage = 0;
+    private bool isNight = false;
 }
