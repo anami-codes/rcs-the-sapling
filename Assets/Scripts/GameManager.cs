@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] screens;
 
-    public float phaseWaitTime = 25.0f;
+    public float phaseWaitTime = 10.0f;
     public float animWaitTime = 0.25f;
 
     void Start()
@@ -30,11 +30,11 @@ public class GameManager : MonoBehaviour
 
     public void StartMinigame()
     {
-        int minigame = (gameStage % 2 != 0) ? 1 : 0;
+        int minigame = (gameStage % 2 != 0) ? 1 : 2;
         StartMinigame(minigame);
     }
 
-    public void StartMinigame (int minigameId)
+    private void StartMinigame (int minigameId)
     {
         for ( int i = 0; i < screens.Length; i++)
         {
@@ -43,8 +43,19 @@ public class GameManager : MonoBehaviour
 
         if ( minigameId > 0 )
         {
+            gameState = GameState.Minigame;
             screens[minigameId].GetComponent<BaseMinigame>().StartMinigame(this);
         }
+    }
+
+    public void EndMinigame()
+    {
+        for (int i = 0; i < screens.Length; i++)
+        {
+            screens[i].SetActive(false);
+        }
+
+        ChangeState();
     }
 
     public void ChangeState ()
@@ -56,7 +67,7 @@ public class GameManager : MonoBehaviour
             gameStage++;
             isNight = false;
             fade = false;
-            timer = 1.5f + animWaitTime;
+            timer = 2f + animWaitTime;
             return;
         } 
         else if (gameStage == 4 && isNight)
@@ -115,7 +126,8 @@ public class GameManager : MonoBehaviour
     {
         None,
         Wait,
-        Animation
+        Animation,
+        Minigame
     }
     private GameState gameState = GameState.Wait;
 }

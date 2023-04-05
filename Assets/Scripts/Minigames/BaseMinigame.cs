@@ -18,6 +18,6 @@ public class BaseMinigame : MonoBehaviour
 
     public virtual void EndMinigame()
     {
-        gameManager.StartMinigame(0);
+        gameManager.EndMinigame();
     }
 }
