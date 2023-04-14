@@ -11,11 +11,11 @@ public class Stone : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (!rect)
         {
             rect = GetComponent<RectTransform>();
-            rect.sizeDelta = new Vector2( 50.0f, 50.0f ) * lifePoints;
             this.minigame = minigame;
         }
 
         currentLife = lifePoints;
+        rect.sizeDelta = new Vector2(50.0f, 50.0f) * lifePoints;
     }
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)

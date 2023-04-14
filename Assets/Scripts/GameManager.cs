@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
                 if (gameStage == 0)
                     uiManager.ShowUI("Play");
                 else
-                    uiManager.ShowUI(isNight ? "Game" : "Forward");
+                    uiManager.ShowUI(( isNight || gameStage >= 3 ) ? "Forward" : "Game");
                 return;
 
         }

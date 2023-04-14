@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 12870018}
   - component: {fileID: 12870019}
   - component: {fileID: 12870020}
+  - component: {fileID: 12870021}
   m_Layer: 5
   m_Name: Minigame_1
   m_TagString: Untagged
@@ -187,6 +188,26 @@ MonoBehaviour:
   gameArea: {fileID: 1208691463}
   sunArea: {fileID: 1319005759}
   cloudContainer: {fileID: 497982742}
+--- !u!95 &12870021
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12870017}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 7482d4ad63103ca49a31457d0babf3c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &37114524
 PrefabInstance:
   m_ObjectHideFlags: 0
