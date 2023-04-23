@@ -15,7 +15,8 @@ public class Stone : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
 
         currentLife = lifePoints;
-        rect.sizeDelta = new Vector2(50.0f, 50.0f) * lifePoints;
+        UpdateSize();        
+        rect.localEulerAngles = new Vector3(0.0f, 0.0f, Random.Range(0.0f, 1.0f) * 360.0f );
     }
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
@@ -28,7 +29,7 @@ public class Stone : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         if (currentLife > 0 )
         {
-            rect.sizeDelta = new Vector2( 50.0f, 50.0f ) * currentLife;
+            UpdateSize();
         }
         else
         {
@@ -38,9 +39,16 @@ public class Stone : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         
     }
 
+    private void UpdateSize()
+    {
+        float stoneSize = sizeMult + (sizeMult * currentLife);
+        rect.sizeDelta = new Vector2(stoneSize, stoneSize);
+    }
+
     public int life { get { return currentLife; } }
 
     private DiggingMinigame minigame;
     private RectTransform rect;
     private int currentLife;
+    private float sizeMult = 25.0f;
 }

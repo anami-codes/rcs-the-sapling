@@ -7,5 +7,6 @@ public class UI : MonoBehaviour
     public Animator playPanelAnim;
     public Animator forwardPanelAnim;
     public Animator gamePanelAnim;
+    public Animator creditsAnim;
     public Animator[] minigameAnims;
 }

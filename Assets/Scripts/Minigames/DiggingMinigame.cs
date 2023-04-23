@@ -6,18 +6,23 @@ public class DiggingMinigame : BaseMinigame
 {
     public RectTransform stoneContainer;
 
+    protected override void InitializeMinigame(GameManager gameManager)
+    {
+        base.InitializeMinigame(gameManager);
+        stones = stoneContainer.GetComponentsInChildren<Stone>();
+    }
+
     public override void StartMinigame(GameManager gameManager)
     {
         if ( !this.gameManager )
-        {
-            base.StartMinigame(gameManager);
-            stones = stoneContainer.GetComponentsInChildren<Stone>();
-        }
+            InitializeMinigame(gameManager);
 
         for (int i = 0; i < stones.Length; i++)
         {
             stones[i].Restart(this);
         }
+
+        base.StartMinigame(gameManager);
     }
 
     public override void CheckConditions()
@@ -30,10 +35,12 @@ public class DiggingMinigame : BaseMinigame
                 return;
             }
         }
-        EndMinigame();
+
+        inGame = false;
+        anim.SetBool("Show", false);
     }
 
-    public override void EndMinigame()
+    protected override void EndMinigame()
     {
         base.EndMinigame();
     }

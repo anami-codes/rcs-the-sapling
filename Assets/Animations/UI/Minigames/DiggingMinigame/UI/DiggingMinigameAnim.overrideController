@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DiggingMinigameAnim
+  m_Controller: {fileID: 9100000, guid: ba160a00881389a4f8acbad3d418e7f7, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 949728a47a313004d925a1d453c2f934, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6092054a7dbe75343bed04b2c76a3843, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 44a19baee40b5f649a1c194f3618801b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ae7511f51bdc63b439df729e54e77afd, type: 2}

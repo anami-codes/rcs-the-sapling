@@ -6,38 +6,47 @@ public class CloudsMinigame : BaseMinigame
     public RectTransform sunArea;
     public RectTransform cloudContainer;
 
+    protected override void InitializeMinigame(GameManager gameManager)
+    {
+        base.InitializeMinigame(gameManager);
+        clouds = cloudContainer.GetComponentsInChildren<Cloud>();
+        minPos = gameArea.Find("MinPos").GetComponent<RectTransform>().position;
+        maxPos = gameArea.Find("MaxPos").GetComponent<RectTransform>().position;
+    }
+
     public override void StartMinigame( GameManager gameManager )
     {
         if ( !this.gameManager )
-        {
-            base.StartMinigame( gameManager );
-            clouds = cloudContainer.GetComponentsInChildren<Cloud>();
-            minPos = gameArea.Find("MinPos").GetComponent<RectTransform>().position;
-            maxPos = gameArea.Find("MaxPos").GetComponent<RectTransform>().position;
-        }
+            InitializeMinigame(gameManager);
 
         for ( int i = 0; i < clouds.Length; i++)
         {
             clouds[i].RestartPosition( this );
         }
+
+        base.StartMinigame(gameManager);
     }
 
     public override void CheckConditions()
     {
-        base.CheckConditions();
-        for (int i = 0; i < clouds.Length; i++)
+        if (inGame)
         {
-            Vector2 pos = clouds[i].GetComponent<RectTransform>().position;
-            if ( ( minPos.x < pos.x && pos.x < maxPos.x ) && 
-                ( minPos.y < pos.y && pos.y < maxPos.y ) )
+            for (int i = 0; i < clouds.Length; i++)
             {
-                return;
+                Vector2 pos = clouds[i].GetComponent<RectTransform>().position;
+                if ((minPos.x < pos.x && pos.x < maxPos.x) &&
+                    (minPos.y < pos.y && pos.y < maxPos.y))
+                {
+                    return;
+                }
             }
         }
-        EndMinigame();
+
+        inGame = false;
+        anim.SetBool("Show", false);
     }
 
-    public override void EndMinigame()
+    protected override void EndMinigame()
     {
         base.EndMinigame();
     }

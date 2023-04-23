@@ -34,6 +34,9 @@ public class UIManager : MonoBehaviour
                 ui.gamePanelAnim.SetBool("Show", newState);
                 StartMinigame();
                 return;
+            case "Credits":
+                ui.creditsAnim.SetBool("Show", newState);
+                return;
         }
     }
 

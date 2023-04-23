@@ -47,3 +47,6 @@ TagManager:
   - name: FrontScene
     uniqueID: 2446513013
     locked: 0
+  - name: Minigame
+    uniqueID: 176215627
+    locked: 0

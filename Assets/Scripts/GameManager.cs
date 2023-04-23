@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] screens;
+    public BaseMinigame[] minigames;
 
     public float phaseWaitTime = 10.0f;
     public float animWaitTime = 0.25f;
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     {
         sceneManager = gameObject.GetComponent<SceneManager>();
         uiManager = gameObject.GetComponent<UIManager>();
-        timer = 0.5f;
+        timer = animWaitTime;
         gameState = GameState.Animation;
     }
 
@@ -26,16 +27,35 @@ public class GameManager : MonoBehaviour
         }
 
         sceneManager.GameUpdate( Time.deltaTime );
+
+        if (currentMinigame >= 0 && gameState == GameState.Minigame)
+            minigames[currentMinigame].MinigameUpdate(Time.deltaTime);
+
+    }
+
+    public void RestartGame()
+    {
+        gameStage = 0;
+        isNight = false;
+        sceneManager.scene.animator.Play("Idle", 0);
+        fade = false;
+        timer = animWaitTime;
     }
 
     public void StartMinigame()
     {
-        int minigame = (gameStage % 2 != 0) ? 1 : 2;
+        int minigame = (gameStage % 2 != 0) ? 0 : 1;
         StartMinigame(minigame);
     }
 
     private void StartMinigame (int minigameId)
     {
+        currentMinigame = minigameId;
+        gameState = GameState.Minigame;
+
+        minigames[currentMinigame].StartMinigame(this);
+
+        /*
         for ( int i = 0; i < screens.Length; i++)
         {
             screens[i].SetActive( i == minigameId );
@@ -46,16 +66,20 @@ public class GameManager : MonoBehaviour
             gameState = GameState.Minigame;
             screens[minigameId].GetComponent<BaseMinigame>().StartMinigame(this);
         }
+        */
     }
 
     public void EndMinigame()
     {
+        currentMinigame = -1;
+        ChangeState();
+
+        /*
         for (int i = 0; i < screens.Length; i++)
         {
             screens[i].SetActive(false);
         }
-
-        ChangeState();
+        */
     }
 
     public void ChangeState ()
@@ -72,12 +96,7 @@ public class GameManager : MonoBehaviour
         } 
         else if (gameStage == 4 && isNight)
         {
-            gameStage = 0;
-            isNight = false;
-            sceneManager.scene.animator.Play("Idle", 0);
-            fade = true;
-            timer = animWaitTime;
-            return;
+            uiManager.ShowUI("Credits");
         }
 
         if (isNight)
@@ -109,13 +128,13 @@ public class GameManager : MonoBehaviour
                 else
                     uiManager.ShowUI(( isNight || gameStage >= 3 ) ? "Forward" : "Game");
                 return;
-
         }
     }
 
     private SceneManager sceneManager;
     private UIManager uiManager;
 
+    private int currentMinigame = -1;
     private int gameStage = 0;
     private bool isNight = false;
     private bool fade = true;
