@@ -2,151 +2,68 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace RainbowCat.TheSapling
 {
-    public GameObject[] screens;
-    public BaseMinigame[] minigames;
-
-    public float phaseWaitTime = 10.0f;
-    public float animWaitTime = 0.25f;
-
-    void Start()
+    public class GameManager : MonoBehaviour
     {
-        sceneManager = gameObject.GetComponent<SceneManager>();
-        uiManager = gameObject.GetComponent<UIManager>();
-        timer = animWaitTime;
-        gameState = GameState.Animation;
-    }
+        public static GameManager instance;
 
-    void Update()
-    {
-        if( timer > 0.0f)
+        public enum GameStatus
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0.0f) OnTimerEnd();
+            PLAYING_CINEMATIC,
+            WAITING_FOR_INPUT,
+            MINIGAME_START,
+            IN_MINIGAME,
+            MINIGAME_END, 
+            PAUSE
+        }
+        public static GameStatus Status { get; protected set; }
+        public ChapterManager chapterManager { get; protected set; }
+        public Camera currentCamera { get; protected set; }
+
+        void Awake()
+        {
+            if(instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            
+            Status = GameStatus.WAITING_FOR_INPUT;
         }
 
-        sceneManager.GameUpdate( Time.deltaTime );
-
-        if (currentMinigame >= 0 && gameState == GameState.Minigame)
-            minigames[currentMinigame].MinigameUpdate(Time.deltaTime);
-
-    }
-
-    public void RestartGame()
-    {
-        gameStage = 0;
-        isNight = false;
-        sceneManager.scene.animator.Play("Idle", 0);
-        fade = false;
-        timer = animWaitTime;
-    }
-
-    public void StartMinigame()
-    {
-        int minigame = (gameStage % 2 != 0) ? 0 : 1;
-        StartMinigame(minigame);
-    }
-
-    private void StartMinigame (int minigameId)
-    {
-        currentMinigame = minigameId;
-        gameState = GameState.Minigame;
-
-        minigames[currentMinigame].StartMinigame(this);
-
-        /*
-        for ( int i = 0; i < screens.Length; i++)
+        public void SetChapter(ChapterManager chapterManager)
         {
-            screens[i].SetActive( i == minigameId );
+            this.chapterManager = chapterManager;
         }
 
-        if ( minigameId > 0 )
+        public void ChangeState(GameStatus nextState)
         {
-            gameState = GameState.Minigame;
-            screens[minigameId].GetComponent<BaseMinigame>().StartMinigame(this);
-        }
-        */
-    }
-
-    public void EndMinigame()
-    {
-        currentMinigame = -1;
-        ChangeState();
-
-        /*
-        for (int i = 0; i < screens.Length; i++)
-        {
-            screens[i].SetActive(false);
-        }
-        */
-    }
-
-    public void ChangeState ()
-    {
-        gameState = GameState.Wait;
-
-        if (gameStage == 0)
-        {
-            gameStage++;
-            isNight = false;
-            fade = false;
-            timer = 2f + animWaitTime;
-            return;
-        } 
-        else if (gameStage == 4 && isNight)
-        {
-            uiManager.ShowUI("Credits");
+            Status = nextState;
+            Debug.Log("Current State: " + Status);
         }
 
-        if (isNight)
+        public void ChangeCamera(Camera newCamera)
         {
-            gameStage++;
-            isNight = false;
-        }
-        else
-        {
-            isNight = true;
+            currentCamera = newCamera;
         }
 
-        fade = true;
-        timer = animWaitTime;
-    }
-
-    private void OnTimerEnd()
-    {
-        switch(gameState)
+        private void Update()
         {
-            case GameState.Wait:
-                gameState = GameState.Animation;
-                timer = phaseWaitTime;
-                sceneManager.ChangeState(gameStage, isNight, fade);
-                return;
-            case GameState.Animation:
-                if (gameStage == 0)
-                    uiManager.ShowUI("Play");
-                else
-                    uiManager.ShowUI(( isNight || gameStage >= 3 ) ? "Forward" : "Game");
-                return;
+            float delta = Time.deltaTime;
+            GameUpdate(delta);
+        }
+
+        protected void GameUpdate(float delta)
+        {
+            if (Status != GameStatus.PAUSE)
+            {
+                if(chapterManager != null) chapterManager.GameUpdate(delta);
+            }
         }
     }
-
-    private SceneManager sceneManager;
-    private UIManager uiManager;
-
-    private int currentMinigame = -1;
-    private int gameStage = 0;
-    private bool isNight = false;
-    private bool fade = true;
-
-    private float timer = 0.0f;
-
-    public enum GameState
-    {
-        None,
-        Wait,
-        Animation,
-        Minigame
-    }
-    private GameState gameState = GameState.Wait;
 }

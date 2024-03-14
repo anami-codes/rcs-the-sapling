@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DragObject
+  - PressObject
+  - HoldObject
+  - CollectionGoal
   layers:
   - Default
   - TransparentFX
@@ -38,15 +42,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BackScene
-    uniqueID: 4139526573
+  - name: Background
+    uniqueID: 2424011475
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: FrontScene
-    uniqueID: 2446513013
+  - name: Foreground
+    uniqueID: 3708702189
     locked: 0
-  - name: Minigame
-    uniqueID: 176215627
+  - name: UI
+    uniqueID: 2394241623
     locked: 0

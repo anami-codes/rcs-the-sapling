@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WateringCan_Anim
+  m_Controller: {fileID: 9100000, guid: 4b4ed4933912c244dadc1e0a3d3cfde2, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 611e770e9497a4a419ec70cde8d89e7d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 372eafb5d3b384f4e983f43a3f66a2f5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1b16566cd6e48ec46a41337929ee879b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e64a39e8ea50a0a4c9ca109a3c9f3a53, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 87466eaf9e022e44685b2651d020884a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4aef1d9670ab6344a8d7c7b3fe721fff, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3edd3d0cc8bc7294194968f3e50bc1c8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: af849386b45e51b49a7409ed1ecc95a9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 136f9eee83c3d5f4e9bd7c5e75ac0bf8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a081c432dc9780246a7cfe8693c74a66, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c7aa3d6bef46edc4b839cb9d3ea9f159, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ebd1db1d71568cc4fbbd8720f4e06267, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: edd7520f21787404394387fdd4f65c9b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 974eb728a62ae244293c08b8dd6c89ea, type: 2}
