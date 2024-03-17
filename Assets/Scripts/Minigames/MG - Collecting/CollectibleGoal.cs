@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RainbowCat.TheSapling.Minigame.Collecting
 {
-    public class Goal : MonoBehaviour
+    public class CollectibleGoal : MonoBehaviour
     {
     }
 }

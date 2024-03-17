@@ -27,7 +27,8 @@ namespace RainbowCat.TheSapling.Minigame
 
         public virtual void GameUpdate( float delta )
         {
-
+            if(interactable != null)
+                interactable.GameUpdate(delta);
         }
 
         protected void SetAsReady()

@@ -17,7 +17,6 @@ namespace RainbowCat.TheSapling.Minigame.Collecting
 
         public override void GameUpdate(float delta)
         {
-            base.GameUpdate(delta);
             if (isDummy && interactable.inAction)
                 Error();
             else

@@ -75,6 +75,11 @@ namespace RainbowCat.TheSapling
             inputController = null;
         }
 
+        public void SetStatus(bool canInteract)
+        {
+            this.canInteract = canInteract;
+        }
+
         public virtual void GameUpdate(float delta)
         {
             if( inAction ) OnInteraction(delta);
@@ -93,5 +98,6 @@ namespace RainbowCat.TheSapling
         protected InputController inputController;
         protected Animator anim;
         protected float counter = 0.0f;
+        protected bool canInteract = true;
     }
 }

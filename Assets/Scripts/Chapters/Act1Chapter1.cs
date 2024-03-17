@@ -18,6 +18,9 @@ namespace RainbowCat.TheSapling
             Storyboard04,
             CollectingMinigame_Repeat,
             Storyboard05,
+            PlantingMinigame,
+            Storyboard06,
+            End,
 
         }
         protected Sequence step;
@@ -72,6 +75,17 @@ namespace RainbowCat.TheSapling
                 case Sequence.CollectingMinigame_Repeat:
                     ChangeTo("Collecting Berries 2", "Intro", StartMinigame);
                     break;
+                case Sequence.Storyboard05:
+                    ChangeTo("Storyboard 05", "Intro", AdvanceSequence);
+                    step = Sequence.PlantingMinigame;
+                    break;
+                case Sequence.PlantingMinigame:
+                    ChangeTo("Planting", "Intro", StartMinigame);
+                    break;
+                case Sequence.Storyboard06:
+                    ChangeTo("Storyboard 06", "Intro", AdvanceSequence);
+                    step = Sequence.End;
+                    break;
                 default:
                     Debug.Log("<color=red>ERROR: Couldn't find next step in sequence</color>");
                     break;
@@ -101,6 +115,9 @@ namespace RainbowCat.TheSapling
                     break;
                 case Sequence.CollectingMinigame_Repeat:
                     step = Sequence.Storyboard05;
+                    break;
+                case Sequence.PlantingMinigame:
+                    step = Sequence.Storyboard06;
                     break;
             }
 
