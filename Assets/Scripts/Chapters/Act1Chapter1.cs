@@ -83,8 +83,16 @@ namespace RainbowCat.TheSapling
                     ChangeTo("Planting", "Intro", StartMinigame);
                     break;
                 case Sequence.Storyboard06:
-                    ChangeTo("Storyboard 06", "Intro", AdvanceSequence);
-                    step = Sequence.End;
+                    if (currentPage.id == "Storyboard 06")
+                    {
+                        ChangeHintState("TapZone", false);
+                        ChangeTo(currentPage.id, "Outro", AdvanceSequence);
+                        step = Sequence.End;
+                    }
+                    else
+                    {
+                        ChangeTo("Storyboard 06", "Intro", ActivateInteraction);
+                    }
                     break;
                 default:
                     Debug.Log("<color=red>ERROR: Couldn't find next step in sequence</color>");
