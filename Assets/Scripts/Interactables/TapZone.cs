@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using RainbowCat.TheSapling.InternalStructure;
 
-namespace RainbowCat.TheSapling
+namespace RainbowCat.TheSapling.Interactables
 {
     public class TapZone : Interactable
     {
-        public TapZone(GameObject obj, HintControl hint) : base (InteractionType.Click ,obj, hint)
+        public TapZone(GameObject obj, HintControl hint, string triggerID) 
+            : base (InteractionType.Click , obj, hint)
         {
-            chapterManager = GameObject.Find("ChapterManager").GetComponent<Act1Chapter1>();
+            this.triggerID = triggerID;
         }
 
         public override void OnInteraction(float delta)
         {
-            chapterManager.Invoke("AdvanceSequence", 0.5f);
+            Game.SetOffTrigger(triggerID);
+            hint.StopHint();
+            gameObject.SetActive(false);
         }
-
-        protected Act1Chapter1 chapterManager;
     }
 }

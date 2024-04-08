@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using RainbowCat.TheSapling.InternalStructure;
+using RainbowCat.TheSapling.Interactables;
 
-namespace RainbowCat.TheSapling.Minigame
+namespace RainbowCat.TheSapling.Minigames
 {
     public class MinigameTarget : MonoBehaviour
     {
@@ -10,19 +10,13 @@ namespace RainbowCat.TheSapling.Minigame
         public bool isReady { get; private set; }
         public bool isNecessary = true;
 
-        void Awake()
-        {
-            Initialize();
-        }
-
-        protected virtual void Initialize ()
+        public virtual void Initialize (Minigame minigame)
         {
             anim = GetComponentInChildren<Animator>();
-            minigameManager = GetComponentInParent<MinigameManager>();
-            minigameManager.AddTarget(this);
+            this.minigame = minigame;
             isReady = false;
-            timer = 0.0f;
-            stage = 1;
+            m_timer = 0.0f;
+            m_stage = 0;
         }
 
         public virtual void GameUpdate( float delta )
@@ -31,15 +25,20 @@ namespace RainbowCat.TheSapling.Minigame
                 interactable.GameUpdate(delta);
         }
 
+        public virtual void SetOffTrigger(string triggerID, bool isActive, Interactable other)
+        {
+
+        }
+
         protected void SetAsReady()
         {
             isReady = true;
-            minigameManager.CheckTargets();
+            minigame.CheckTargets();
         }
 
-        protected MinigameManager minigameManager;
+        protected Minigame minigame;
         protected Animator anim;
-        protected float timer;
-        protected int stage;
+        protected float m_timer;
+        protected int m_stage;
     }
 }

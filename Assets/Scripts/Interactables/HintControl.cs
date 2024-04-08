@@ -2,43 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HintControl : MonoBehaviour
+namespace RainbowCat.TheSapling.Interactables
 {
-    public float minWaitTime;
-    public float maxWaitTime;
-
-    private void Awake()
+    public class HintControl : MonoBehaviour
     {
-        anim = GetComponent<Animator>();
-        isActive = false;
-    }
+        public float minWaitTime;
+        public float maxWaitTime;
+        public bool isActive { get; private set; }
 
-    public void StartHint()
-    {
-        anim.Play("Action");
-        timer = Random.Range(minWaitTime, maxWaitTime);
-        isActive = true;
-    }
-
-    public void StopHint ()
-    {
-        isActive = false;
-    }
-
-    public void GameUpdate(float delta)
-    {
-        if(isActive && timer > 0.0f && anim.isActiveAndEnabled)
+        private void Awake()
         {
-            timer -= delta;
-            if (timer <= 0.0f)
+            anim = GetComponent<Animator>();
+            isActive = false;
+        }
+
+        public void StartHint()
+        {
+            anim.Play("Action");
+            timer = Random.Range(minWaitTime, maxWaitTime);
+            isActive = true;
+        }
+
+        public void StopHint()
+        {
+            isActive = false;
+        }
+
+        public void GameUpdate(float delta)
+        {
+            if (isActive && timer > 0.0f && anim.isActiveAndEnabled)
             {
-                anim.Play("Action");
-                timer = Random.Range(minWaitTime, maxWaitTime);
+                timer -= delta;
+                if (timer <= 0.0f)
+                {
+                    anim.Play("Action");
+                    timer = Random.Range(minWaitTime, maxWaitTime);
+                }
             }
         }
-    }
 
-    private Animator anim;
-    private bool isActive;
-    private float timer;
+        private Animator anim;
+        private float timer;
+    }
 }

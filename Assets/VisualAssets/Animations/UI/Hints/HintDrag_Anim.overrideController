@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HintDrag_Anim
+  m_Controller: {fileID: 9100000, guid: be621d0c28629ef49813966c6a074e34, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 067ac45c054dc1e499f0e9513886ab6b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4607465dd630b0443aa31cee2375b70c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4b54543702edf7943a0a2e08ff624590, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1286e17e6a0a4e24dac2cc4791b08d45, type: 2}

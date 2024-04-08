@@ -1,36 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace RainbowCat.TheSapling
+namespace RainbowCat.TheSapling.Interactables
 {
     public class InteractableObject : MonoBehaviour
     {
         public HintControl hint;
+        public bool alwaysShowHint;
 
         public enum Type
         {
             TapZone,
-            WateringCan,
-            Scissors
+            Draggable,
         }
         public Type type;
-        public Interactable interactable { get; protected set; }
+        public string interactionCode;
 
-        void Awake()
+        public void Initialize()
         {
             switch(type)
             {
                 case Type.TapZone:
-                    interactable = new TapZone(gameObject, hint);
+                    interactable = new TapZone(gameObject, hint, interactionCode);
                     break;
-                case Type.WateringCan:
-                    interactable = new Minigame.WateringPlants.WateringCan(gameObject, hint);
-                    break;
-                case Type.Scissors:
-                    interactable = new Minigame.Pruning.Scissors(gameObject, hint);
+                case Type.Draggable:
+                    interactable = new Draggable(gameObject, hint, interactionCode);
                     break;
             }
+        }
+
+        public void Activate(bool isActive)
+        {
+            gameObject.SetActive(isActive);
+            if (hint != null && alwaysShowHint && isActive)
+                hint.StartHint();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -38,9 +40,16 @@ namespace RainbowCat.TheSapling
             interactable.TriggerEnter(collision);
         }
 
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            interactable.TriggerStay(collision);
+        }
+
         private void OnTriggerExit2D(Collider2D collision)
         {
             interactable.TriggerExit(collision);
         }
+
+        public Interactable interactable { get; protected set; }
     }
 }

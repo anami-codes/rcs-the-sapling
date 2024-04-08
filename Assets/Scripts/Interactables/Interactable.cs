@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace RainbowCat.TheSapling
+namespace RainbowCat.TheSapling.Interactables
 {
     public class Interactable
     {
@@ -91,12 +89,19 @@ namespace RainbowCat.TheSapling
         {
         }
 
+        public virtual void TriggerStay(Collider2D collision)
+        {
+        }
+
         public virtual void TriggerExit(Collider2D collision)
         {
         }
 
         protected InputController inputController;
         protected Animator anim;
+
+        protected string triggerID;
+
         protected float counter = 0.0f;
         protected bool canInteract = true;
     }
