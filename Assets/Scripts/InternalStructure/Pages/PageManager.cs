@@ -95,7 +95,7 @@ namespace RainbowCat.TheSapling.InternalStructure
             else
             {
                 Game.cameraController.ChangeCamera(CameraController.defaultCamera);
-                Game.cameraController.UpdatePosition(transform.position);
+                Game.UpdateCenter(transform.position.x, transform.position.y);
             }
             Advance(SequenceStep.TriggerType.OnStart);
         }

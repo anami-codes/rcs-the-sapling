@@ -9,7 +9,9 @@ namespace RainbowCat.TheSapling.InternalStructure
     {
         public Game.State State { get; protected set; }
         public ChapterManager chapter { get; protected set; }
+        public InputController inputController { get; protected set; }
 
+    public Transform mouseObj;
         public GameObject loadingPanel;
         public Material[] gameMaterials;
         public TextAsset config;
@@ -116,8 +118,6 @@ namespace RainbowCat.TheSapling.InternalStructure
             Cinemachine.CinemachineVirtualCamera[] cameras = FindObjectsByType<Cinemachine.CinemachineVirtualCamera>(FindObjectsSortMode.None);
             Game.LoadCameras(cameras);
         }
-
-        protected InputController inputController;
 
         private bool loadingScene;
         private string sceneName;

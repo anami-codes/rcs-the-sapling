@@ -32,8 +32,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalFromTexture_90f864319238487d975d9a2e90c5ca4b_Texture_0:
+        m_Texture: {fileID: 2800000, guid: 75b2ce0fde987c64b96444668187529e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _NormalMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_06527694e31a418aae3db94f0062505c_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 75b2ce0fde987c64b96444668187529e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_0f382601293649f5b9bb684170fa4712_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 75b2ce0fde987c64b96444668187529e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_2956da5af5154fbea501a503b7a8f9ae_Texture_1:
@@ -64,6 +76,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: cd2619705e261d94889e8ddc3c5a2b52, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Triplanar_2ec813f3433540fd95e7a7895e5dc315_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 75b2ce0fde987c64b96444668187529e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -80,12 +96,13 @@ Material:
     m_Floats:
     - _Alpha: 1
     - _AlphaInv: 1
+    - _CameraSize: 5
     - _CurrentAlpha: 1
     - _EnableExternalAlpha: 0
     - _Float: 0.765
     - _Hardness: -0.5
-    - _Progress: 1.0010166
-    - _Radius: 10.005082
+    - _Progress: 1.000922
+    - _Radius: 10.004608
     m_Colors:
     - _CenterPos: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

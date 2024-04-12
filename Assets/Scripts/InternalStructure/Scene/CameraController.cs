@@ -36,11 +36,11 @@ namespace RainbowCat.TheSapling.InternalStructure
             virtualCamera.gameObject.SetActive(true);
         }
 
-        public void UpdatePosition(Vector2 newPos)
+        public void UpdatePosition(float x, float y)
         {
             Vector3 pos = virtualCamera.transform.position;
-            pos.y = newPos.y;
-            pos.x = newPos.x;
+            pos.y = y;
+            pos.x = x;
             virtualCamera.transform.position = pos;
         }
 

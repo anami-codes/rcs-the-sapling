@@ -25,7 +25,7 @@ namespace RainbowCat.TheSapling.Minigames
 
         private void Error()
         {
-            //Error fedback
+            anim.SetTrigger("Failure");
             interactable.InterruptInteraction();
         }
 

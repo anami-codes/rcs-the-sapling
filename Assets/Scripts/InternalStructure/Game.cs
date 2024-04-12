@@ -42,6 +42,12 @@ namespace RainbowCat.TheSapling.InternalStructure
             cameraController.AddCameras(camList);
         }
 
+        public static void UpdateCenter(float x, float y)
+        {
+            cameraController.UpdatePosition(x, y);
+            manager.inputController.UpdateCenter(x, y);
+        }
+
         public static void Clean()
         {
             cameraController = null;

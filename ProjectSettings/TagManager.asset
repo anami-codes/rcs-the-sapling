@@ -9,6 +9,7 @@ TagManager:
   - HoldObject
   - CollectionGoal
   - PlantingGoal
+  - VirtualMouse
   layers:
   - Default
   - TransparentFX

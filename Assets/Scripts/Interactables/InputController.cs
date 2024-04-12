@@ -48,6 +48,16 @@ namespace RainbowCat.TheSapling.Interactables
             return new Vector2(mouseX, mouseY);
         }
 
+        public void UpdateCenter(float x, float y)
+        {
+            m_screenCenter.x = x;
+            m_screenCenter.y = y;
+            m_mousePosition = Vector3.zero;
+        }
+
         private Interactable interactable = null;
+        private Vector3 m_mousePosition;
+        private Vector3 m_screenCenter = Vector3.zero;
+
     }
 }
