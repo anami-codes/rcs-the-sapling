@@ -6,6 +6,7 @@ namespace RainbowCat.TheSapling.Minigames
 {
     public class TargetCollectible : MinigameTarget
     {
+        public Sprite collectedSprite;
         public bool isDummy = false;
 
         public override void Initialize(Minigame minigame)
@@ -34,6 +35,7 @@ namespace RainbowCat.TheSapling.Minigames
             if (collision.CompareTag("CollectionGoal"))
             {
                 gameObject.SetActive(false);
+                collision.GetComponent<CollectibleGoal>().AddSprite(collectedSprite);
                 SetAsReady();
             }
         }

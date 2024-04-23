@@ -27,6 +27,7 @@ namespace RainbowCat.TheSapling.InternalStructure
         public static void SetGameManager(GameManager manager_)
         {
             manager = manager_;
+            settings = new GameSettings();
         }
 
         public static void SetOffTrigger(string triggerID)
@@ -54,6 +55,7 @@ namespace RainbowCat.TheSapling.InternalStructure
         }
 
         public static GameManager manager { get; private set; }
+        public static GameSettings settings { get; private set; }
         public static CameraController cameraController { get; private set; }
     }
 }
