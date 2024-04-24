@@ -14,7 +14,7 @@ namespace RainbowCat.TheSapling.Interactables
             Drag,
             Hold
         }
-        protected InteractionType interactionType;
+        public InteractionType interactionType { get; protected set; }
 
         public Interactable( InteractionType type, GameObject obj, HintControl hint = null)
         {

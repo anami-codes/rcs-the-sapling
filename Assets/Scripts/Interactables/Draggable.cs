@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using RainbowCat.TheSapling.Minigames;
 
 namespace RainbowCat.TheSapling.Interactables
@@ -12,11 +13,32 @@ namespace RainbowCat.TheSapling.Interactables
             m_interactionStopped = false;
         }
 
+        public override void GameUpdate(float delta)
+        {
+            if (m_freezeTimer > 0.0f)
+            {
+                m_freezeTimer -= delta;
+                if (m_freezeTimer <= 0.0f && inAction)
+                    Mouse.current.WarpCursorPosition(m_freezePos);
+            } 
+            else
+            {
+                base.GameUpdate(delta);
+            }
+        }
+
+        public void StopMovement(float seconds)
+        {
+            m_freezePos = Input.mousePosition;
+            m_freezeTimer = seconds;
+        }
+
         public override Interactable StartInteraction(InputController controller)
         {
             base.StartInteraction(controller);
             anim.SetBool("inMovement", true);
-            if (hint.isActive) hint.StopHint();
+            if (hint != null && hint.isActive) 
+                hint.StopHint();
             return this;
         }
 
@@ -85,5 +107,8 @@ namespace RainbowCat.TheSapling.Interactables
 
         private MinigameTarget m_target;
         private bool m_interactionStopped;
+
+        private Vector2 m_freezePos;
+        private float m_freezeTimer;
     }
 }
