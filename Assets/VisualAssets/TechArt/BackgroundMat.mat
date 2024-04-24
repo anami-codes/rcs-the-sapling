@@ -101,7 +101,7 @@ Material:
     - _EnableExternalAlpha: 0
     - _Float: 0.765
     - _Hardness: 1
-    - _Progress: -0.0008356571
+    - _Progress: 1
     - _Radius: 0
     m_Colors:
     - _CenterPos: {r: 0, g: 0, b: 0, a: 0}
