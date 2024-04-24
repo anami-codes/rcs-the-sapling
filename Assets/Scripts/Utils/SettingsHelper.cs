@@ -24,10 +24,13 @@ namespace RainbowCat.TheSapling.Utils
                 if (resName == Game.settings.screenResolution.name)
                     index = i;
             }
-            
-            screenResolution?.AddOptions(screenResolutions);
-            screenResolution?.SetValueWithoutNotify(index);
-            fullscreen.isOn = Game.settings.fullscreen;
+
+            if (screenResolution != null && fullscreen != null)
+            {
+                screenResolution.AddOptions(screenResolutions);
+                screenResolution.SetValueWithoutNotify(index);
+                fullscreen.isOn = Game.settings.fullscreen;
+            }
         }
 
         public void ChangeResolution()
