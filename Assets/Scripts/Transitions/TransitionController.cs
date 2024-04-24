@@ -72,6 +72,7 @@ namespace RainbowCat.TheSapling.Transitions
             m_transition.Out(m_baseTransitionTime);
             m_info = info;
             isInTransition = true;
+            Game.manager.mouse.ChangeVisibility(false);
             m_sender.BeginTransitionEvent(info.code, info.triggerID);
         }
 
@@ -85,6 +86,7 @@ namespace RainbowCat.TheSapling.Transitions
             m_timer = 0.0f;
 
             isInTransition = false;
+            Game.manager.mouse.ChangeVisibility(true);
             Game.manager.ChangeState(Game.State.WAITING_FOR_INPUT);
         }
 

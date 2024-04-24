@@ -37,6 +37,7 @@ namespace RainbowCat.TheSapling.Interactables
         {
             base.StartInteraction(controller);
             anim.SetBool("inMovement", true);
+            Game.manager.mouse.ChangeVisibility(false);
             if (hint != null && hint.isActive) 
                 hint.StopHint();
             return this;
@@ -102,6 +103,7 @@ namespace RainbowCat.TheSapling.Interactables
             anim.SetBool("inAction", false);
             anim.SetBool("inMovement", false);
             m_target?.SetOffTrigger(triggerID, false, this);
+            Game.manager.mouse.ChangeVisibility(true);
             m_interactionStopped = true;
         }
 

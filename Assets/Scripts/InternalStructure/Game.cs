@@ -1,6 +1,8 @@
 using Cinemachine;
+using RainbowCat.TheSapling.Interactables;
+using RainbowCat.TheSapling.InternalStructure;
 
-namespace RainbowCat.TheSapling.InternalStructure
+namespace RainbowCat.TheSapling
 {
     public static class Game
     {
@@ -28,6 +30,7 @@ namespace RainbowCat.TheSapling.InternalStructure
         {
             manager = manager_;
             settings = new GameSettings();
+            inputController = new InputController();
         }
 
         public static void SetOffTrigger(string triggerID)
@@ -46,7 +49,7 @@ namespace RainbowCat.TheSapling.InternalStructure
         public static void UpdateCenter(float x, float y)
         {
             cameraController.UpdatePosition(x, y);
-            manager.inputController.UpdateCenter(x, y);
+            inputController.UpdateCenter(x, y);
         }
 
         public static void Clean()
@@ -57,5 +60,6 @@ namespace RainbowCat.TheSapling.InternalStructure
         public static GameManager manager { get; private set; }
         public static GameSettings settings { get; private set; }
         public static CameraController cameraController { get; private set; }
+        public static InputController inputController { get; private set; }
     }
 }

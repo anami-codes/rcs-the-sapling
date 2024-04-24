@@ -1614,6 +1614,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1687637265}
   - {fileID: 1583988025}
   m_Father: {fileID: 1936814082}
   m_RootOrder: 1
@@ -3579,10 +3580,10 @@ RectTransform:
   m_Father: {fileID: 1687637265}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913776080
 MonoBehaviour:
@@ -5229,7 +5230,6 @@ RectTransform:
   - {fileID: 889571763}
   - {fileID: 1456961119}
   - {fileID: 1602626884}
-  - {fileID: 1687637265}
   - {fileID: 1372010853}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -5370,7 +5370,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1280617047}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5808,7 +5808,7 @@ RectTransform:
   m_Children:
   - {fileID: 70182142}
   m_Father: {fileID: 377194775}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5957,13 +5957,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1687637265}
   - component: {fileID: 1687637266}
+  - component: {fileID: 1687637267}
   m_Layer: 5
   m_Name: MouseObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1687637265
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5977,13 +5978,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 913776079}
-  m_Father: {fileID: 1280617047}
-  m_RootOrder: 3
+  m_Father: {fileID: 377194775}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -960, y: 540}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687637266
 MonoBehaviour:
@@ -5994,98 +5995,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1687637264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424b6720ff5999446843ba414e58a907, type: 3}
+  m_Script: {fileID: 11500000, guid: b40f7beff97c9924599b052dc197a0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CursorMode: 0
-  m_CursorGraphic: {fileID: 913776080}
-  m_CursorTransform: {fileID: 1687637265}
-  m_CursorSpeed: 400
-  m_ScrollSpeed: 45
-  m_StickAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Stick
-      m_Type: 0
-      m_ExpectedControlType: Axis
-      m_Id: 7dc68e2a-23c0-4577-baf4-f00e0be00bb5
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_LeftButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Left Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 9af0a934-dedd-41ec-acf5-e75cb1cb1f81
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_MiddleButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Middle Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: b46f952d-2ccb-4add-9175-085a112d099c
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_RightButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Right Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: e83dba3e-5bdf-4b77-8f66-53522a4f1cc9
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_ForwardButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Forward Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 3bb56898-ca9b-4094-a8fc-fbbc96735dcf
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_BackButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Back Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 9398f89d-7d28-4dd0-9bb1-0d114f7b7787
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_ScrollWheelAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Scroll Wheel
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 30ba97d7-afe4-4790-b260-2d66cabe5769
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
+--- !u!210 &1687637267
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687637264}
+  m_Enabled: 1
+  m_SortingLayerID: -1900725673
+  m_SortingLayer: 2
+  m_SortingOrder: 10
 --- !u!1 &1704829059
 GameObject:
   m_ObjectHideFlags: 0
@@ -6770,7 +6693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d6b2d4974814d438dcaa1ac10ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseObj: {fileID: 913776079}
+  mouse: {fileID: 1687637266}
   loadingPanel: {fileID: 1583988023}
   gameMaterials:
   - {fileID: 2100000, guid: 908334023c0dcd644a0964652897dd78, type: 2}

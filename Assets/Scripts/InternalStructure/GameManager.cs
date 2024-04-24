@@ -9,9 +9,9 @@ namespace RainbowCat.TheSapling.InternalStructure
     {
         public Game.State State { get; protected set; }
         public ChapterManager chapter { get; protected set; }
-        public InputController inputController { get; protected set; }
+        
 
-    public Transform mouseObj;
+        public MouseHelper mouse;
         public GameObject loadingPanel;
         public Material[] gameMaterials;
         public TextAsset config;
@@ -21,9 +21,9 @@ namespace RainbowCat.TheSapling.InternalStructure
             if (Game.manager == null)
             {
                 Game.SetGameManager(this);
-                inputController = new InputController();
                 DontDestroyOnLoad(gameObject);
                 TechArt.WatercolorShader.Initialize();
+                Cursor.visible = false;
             }
             else
             {
@@ -41,9 +41,13 @@ namespace RainbowCat.TheSapling.InternalStructure
             if (State == Game.State.IN_TRANSITION)
             {
                 if (chapter.currentPage.isMinigame)
+                {
                     State = Game.State.WAITING_FOR_INPUT;
+                }
                 else
+                {
                     State = Game.State.PLAYING_CINEMATIC;
+                }
                 Debug.Log("Current State: " + State);
             }
             else if (nextState != State)
@@ -85,7 +89,7 @@ namespace RainbowCat.TheSapling.InternalStructure
         {
             if ( (State != Game.State.PAUSE) && (State != Game.State.IN_TRANSITION) )
             {
-                inputController.GameUpdate(delta);
+                Game.inputController.GameUpdate(delta);
                 Utils.TimerController.GameUpdate(delta);
                 if (chapter != null) chapter.GameUpdate(delta);
             }
