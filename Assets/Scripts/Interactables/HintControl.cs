@@ -25,6 +25,7 @@ namespace RainbowCat.TheSapling.Interactables
 
         public void StopHint()
         {
+            anim.Play("EMPTY");
             isActive = false;
         }
 

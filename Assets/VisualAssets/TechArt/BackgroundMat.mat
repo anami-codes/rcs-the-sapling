@@ -100,9 +100,12 @@ Material:
     - _CurrentAlpha: 1
     - _EnableExternalAlpha: 0
     - _Float: 0.765
-    - _Hardness: 1
+    - _Hardness: -0.5
+    - _PhaseTime: 0.33
+    - _Phase_1: 0.33
+    - _Phase_2: 0.66
     - _Progress: 1
-    - _Radius: 0
+    - _Radius: 10.00524
     m_Colors:
     - _CenterPos: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

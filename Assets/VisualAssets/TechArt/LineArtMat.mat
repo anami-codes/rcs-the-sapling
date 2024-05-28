@@ -85,9 +85,10 @@ Material:
     - _Alpha: 1
     - _CameraSize: 5
     - _EnableExternalAlpha: 0
-    - _Hardness: 1
-    - _Progress: 1
-    - _Radius: 0
+    - _Hardness: -0.5
+    - _PhaseTime: 0.33
+    - _Progress: 1.0010484
+    - _Radius: 10.00524
     m_Colors:
     - _CenterPos: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
