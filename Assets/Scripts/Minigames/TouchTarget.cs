@@ -14,12 +14,17 @@ namespace RainbowCat.TheSapling.Minigames
             {
                 SetAsReady();
                 gameObject.SetActive(false);
-                if(other.interactionType == Interactable.InteractionType.Drag)
+                if (other.interactionType == Interactable.InteractionType.Drag)
                 {
                     Draggable draggable = other as Draggable;
                     draggable.StopMovement(0.3f);
                 }
             }
+        }
+
+        public override TargetStatus GetStatus()
+        {
+            return new TargetStatus((isReady) ? 1.0f : 0.0f, 1.0f);
         }
     }
 }

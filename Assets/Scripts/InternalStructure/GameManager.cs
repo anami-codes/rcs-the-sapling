@@ -121,7 +121,7 @@ namespace RainbowCat.TheSapling.InternalStructure
             chapter = FindObjectOfType<ChapterManager>();
             Cinemachine.CinemachineVirtualCamera[] cameras = FindObjectsByType<Cinemachine.CinemachineVirtualCamera>(FindObjectsSortMode.None);
             Game.LoadCameras(cameras);
-            FindObjectOfType<Utils.SettingsHelper>().SetResolutions();
+            FindObjectOfType<Utils.SettingsHelper>().SetInitialValues();
         }
 
         private bool loadingScene;

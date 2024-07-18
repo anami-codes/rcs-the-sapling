@@ -34,7 +34,7 @@ namespace RainbowCat.TheSapling.Interactables
                 if (Input.GetMouseButtonUp(0))
                 {
                     if (interactable != null)
-                        interactable.EndInteraction();
+                        interactable.EndAction();
                 }
             }
         }

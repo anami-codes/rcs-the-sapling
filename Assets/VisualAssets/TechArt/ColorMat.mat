@@ -25,7 +25,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ff0516a075290634cb586ae5c6be636d, type: 3}
+        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -83,15 +83,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 1
+    - _BarProgress: 0
     - _CameraSize: 5
     - _EnableExternalAlpha: 0
     - _Hardness: -0.5
     - _PhaseTime: 0.33
-    - _Progress: 1.0010484
-    - _Radius: 10.00524
+    - _Progress: 1.0021433
+    - _Radius: 10.010711
     m_Colors:
+    - _BackgroundColor: {r: 0, g: 0, b: 0, a: 0}
     - _CenterPos: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _FillColor: {r: 1, g: 1, b: 1, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}

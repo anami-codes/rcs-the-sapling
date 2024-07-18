@@ -82,12 +82,13 @@ namespace RainbowCat.TheSapling.InternalStructure
             return new TransitionInfo();
         }
 
-        public void BeginPage()
+        public virtual void BeginPage()
         {
             isActive = true;
             gameObject.SetActive(true);
             uiIsWaiting = true;
             page.chapter.UpdateCurrentPage(page.id);
+            SoundManager.instance.PlayMusic( (page.isMinigame) ? 1 : 0);
             if(startingCam != null)
             {
                 Game.cameraController.ChangeCamera(startingCam.name);
@@ -173,7 +174,7 @@ namespace RainbowCat.TheSapling.InternalStructure
             return nextSteps;
         }
 
-        private void Clear()
+        protected virtual void Clear()
         {
             gameObject.SetActive(false);
             ui?.gameObject.SetActive(false);

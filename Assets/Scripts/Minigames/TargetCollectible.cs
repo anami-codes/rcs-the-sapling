@@ -12,7 +12,7 @@ namespace RainbowCat.TheSapling.Minigames
         public override void Initialize(Minigame minigame)
         {
             base.Initialize(minigame);
-            interactable = new Interactable(Interactable.InteractionType.Drag, gameObject, null);
+            interactable = new Interactable(Interactable.InteractionType.Drag, gameObject, null, "sfx_mg_pick_berry");
             isNecessary = !isDummy;
         }
 
@@ -27,7 +27,8 @@ namespace RainbowCat.TheSapling.Minigames
         private void Error()
         {
             anim.SetTrigger("Failure");
-            interactable.InterruptInteraction();
+            SoundManager.instance.PlaySound(errorSFX);
+            interactable.InterruptAction();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

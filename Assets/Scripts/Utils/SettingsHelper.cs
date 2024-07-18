@@ -10,8 +10,10 @@ namespace RainbowCat.TheSapling.Utils
     {
         public TMP_Dropdown screenResolution;
         public Toggle fullscreen;
+        public Slider bgmVolume;
+        public Slider sfxVolume;
 
-        public void SetResolutions()
+        public void SetInitialValues()
         {
             List<string> screenResolutions = new List<string>();
             int index = 0;
@@ -31,6 +33,9 @@ namespace RainbowCat.TheSapling.Utils
                 screenResolution.SetValueWithoutNotify(index);
                 fullscreen.isOn = Game.settings.fullscreen;
             }
+
+            bgmVolume.value = Game.settings.bgmVolume;
+            sfxVolume.value = Game.settings.sfxVolume;
         }
 
         public void ChangeResolution()
@@ -38,6 +43,16 @@ namespace RainbowCat.TheSapling.Utils
             string screenRes = screenResolution.options[screenResolution.value].text;
             bool isFullscreen = fullscreen.isOn;
             Game.settings.ChangeResolution(screenRes, isFullscreen);
+        }
+
+        public void ChangeBGMVolume()
+        {
+            Game.settings.ChangeBGMVolume(bgmVolume.value);
+        }
+
+        public void ChangeSFXVolume()
+        {
+            Game.settings.ChangeSFXVolume(sfxVolume.value);
         }
     }
 }

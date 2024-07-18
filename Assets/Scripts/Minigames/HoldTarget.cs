@@ -15,6 +15,7 @@ namespace RainbowCat.TheSapling.Minigames
             base.Initialize(minigame);
             m_sprite = GetComponentInChildren<SpriteRenderer>();
             m_sprite.color = stages[m_stage].color;
+            m_targetProgress = 0.0f;
         }
 
         public override void GameUpdate(float delta)
@@ -34,6 +35,13 @@ namespace RainbowCat.TheSapling.Minigames
             }
         }
 
+        public override TargetStatus GetStatus()
+        {
+            float maxValue = (stages.Length - 1.0f);
+            float currentValue = (m_targetProgress > maxValue) ? maxValue : m_targetProgress;
+            return new TargetStatus(currentValue, maxValue);
+        }
+
         private void StartStage()
         {
             if (m_timer <= 0.0f) 
@@ -50,6 +58,7 @@ namespace RainbowCat.TheSapling.Minigames
                 m_timer -= delta;
                 float t = m_timer / stages[m_stage].time;
                 m_sprite.color = Color.Lerp(stages[m_stage + 1].color, stages[m_stage].color, t);
+                m_targetProgress = m_stage + (1.0f - t);
             }
 
             if (m_timer <= 0.0f)
@@ -61,6 +70,8 @@ namespace RainbowCat.TheSapling.Minigames
                     StartStage();
             }
         }
+
+        private float m_targetProgress;
 
         private SpriteRenderer m_sprite;
         private bool m_isActive;

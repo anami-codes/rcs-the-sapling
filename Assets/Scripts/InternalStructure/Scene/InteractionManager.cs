@@ -57,7 +57,7 @@ namespace RainbowCat.TheSapling.InternalStructure
         {
             foreach (InteractableObject obj in m_interactables)
             {
-                obj.interactable.InterruptInteraction();
+                obj.interactable.InterruptAction();
             }
         }
 

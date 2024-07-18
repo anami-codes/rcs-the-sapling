@@ -2,10 +2,11 @@ using UnityEngine;
 using RainbowCat.TheSapling.InternalStructure;
 using RainbowCat.TheSapling.Interactables;
 
-namespace RainbowCat.TheSapling.Minigames.Planting
+namespace RainbowCat.TheSapling.Minigames
 {
     public class PottedPlant : MinigameTarget
     {
+        public PlantingMinigame plantingMinigame;
         public SpriteRenderer pot;
 
         public override void Initialize(Minigame minigame)
@@ -25,8 +26,8 @@ namespace RainbowCat.TheSapling.Minigames.Planting
             if (collision.CompareTag("PlantingGoal"))
             {
                 PlantingGoal goal = collision.GetComponent<PlantingGoal>();
-                interactable.InterruptInteraction();
-                if (goal.target == this)
+                interactable.InterruptAction();
+                if (goal.target == this && goal.CanPlant())
                     Success(goal);
                 else
                     Error();
@@ -37,8 +38,9 @@ namespace RainbowCat.TheSapling.Minigames.Planting
         {
             interactable.SetStatus(false);
             transform.position = goal.transform.position;
-            goal.gameObject.SetActive(false);
+            //goal.gameObject.SetActive(false);
             pot.enabled = false;
+            plantingMinigame.ZoomOut();
             SetAsReady();
         }
 

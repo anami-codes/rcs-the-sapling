@@ -10,17 +10,17 @@ namespace RainbowCat.TheSapling.Utils
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            interactableObj.interactable.TriggerEnter(collision);
+            interactableObj.TriggerEnter(collision);
         }
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            interactableObj.interactable.TriggerStay(collision);
+            interactableObj.TriggerStay(collision);
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            interactableObj.interactable.TriggerExit(collision);
+            interactableObj.TriggerExit(collision);
         }
     }
 }

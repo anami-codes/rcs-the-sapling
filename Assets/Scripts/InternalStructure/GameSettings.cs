@@ -8,12 +8,16 @@ namespace RainbowCat.TheSapling.InternalStructure
         public int totalAvailableResolutions { get { return sizes.Count; } }
         public ScreenResolution screenResolution { get; private set; }
         public bool fullscreen { get; private set; }
+        public float bgmVolume { get; private set; }
+        public float sfxVolume { get; private set; }
 
         public GameSettings()
         {
             LoadResolutions();
             fullscreen = Screen.fullScreen;
             screenResolution = new ScreenResolution(Screen.width, Screen.height);
+            bgmVolume = 0.25f;
+            sfxVolume = 0.5f;
         }
 
         public void ChangeResolution(string resName, bool fullscreen)
@@ -21,6 +25,17 @@ namespace RainbowCat.TheSapling.InternalStructure
             screenResolution = GetResolution(resName);
             this.fullscreen = fullscreen;
             Screen.SetResolution(screenResolution.x, screenResolution.y, this.fullscreen);
+        }
+
+        public void ChangeBGMVolume(float newValue) 
+        { 
+            bgmVolume = newValue;
+            SoundManager.instance.UpdateSound();
+        }
+
+        public void ChangeSFXVolume(float newValue) 
+        { 
+            sfxVolume = newValue; 
         }
 
         public ScreenResolution GetResolution (int index)

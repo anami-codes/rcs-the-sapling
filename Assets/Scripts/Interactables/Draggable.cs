@@ -10,7 +10,6 @@ namespace RainbowCat.TheSapling.Interactables
             : base(InteractionType.Drag, obj, hint)
         {
             this.triggerID = triggerID;
-            m_interactionStopped = false;
         }
 
         public override void GameUpdate(float delta)
@@ -24,6 +23,14 @@ namespace RainbowCat.TheSapling.Interactables
             else
             {
                 base.GameUpdate(delta);
+
+                if (isInteracting && ( (m_target && m_target.isReady) || (!inAction) ) )
+                {
+                    m_target?.SetOffTrigger(triggerID, false, this);
+                    anim.SetBool("inAction", false);
+                    isInteracting = false;
+                    m_target = null;
+                }
             }
         }
 
@@ -43,57 +50,65 @@ namespace RainbowCat.TheSapling.Interactables
             return this;
         }
 
-        public override void EndInteraction()
+        public override void EndAction()
         {
-            base.EndInteraction();
+            base.EndAction();
+            StopAction();
+        }
+
+        public override void InterruptAction()
+        {
+            base.InterruptAction();
             StopAction();
         }
 
         public override void InterruptInteraction()
         {
             base.InterruptInteraction();
-            StopAction();
+            m_target?.SetOffTrigger(triggerID, false, this);
+            anim.SetBool("inAction", false);
+            isInteracting = false;
+            m_target = null;
         }
 
         public override void TriggerEnter(Collider2D collision)
         {
             MinigameTarget target = collision.GetComponent<MinigameTarget>();
-            if (target)
+            if (target && !target.isReady)
             {
                 m_target = target;
                 m_target.SetOffTrigger(triggerID, true, this);
                 anim.SetBool("inAction", true);
+                isInteracting = true;
             }
         }
 
         public override void TriggerStay(Collider2D collision)
         {
-            if (m_interactionStopped)
+            MinigameTarget target = collision.GetComponent<MinigameTarget>();
+            if (target && !target.isReady)
             {
-                MinigameTarget target = collision.GetComponent<MinigameTarget>();
-                if (target)
+                if (m_target != target)
                 {
-                    if (m_target != target)
-                    {
-                        m_target.SetOffTrigger(triggerID, false, this);
-                        m_target = target;
-                    }
-
-                    m_target.SetOffTrigger(triggerID, true, this);
-                    anim.SetBool("inMovement", true);
-                    anim.SetBool("inAction", true);
-                    m_interactionStopped = false;
+                    m_target?.SetOffTrigger(triggerID, false, this);
+                    m_target = target;
                 }
+
+                m_target.SetOffTrigger(triggerID, true, this);
+                anim.SetBool("inMovement", true);
+                anim.SetBool("inAction", true);
+                isInteracting = true;
             }
         }
 
         public override void TriggerExit(Collider2D collision)
         {
             MinigameTarget target = collision.GetComponent<MinigameTarget>();
-            if (target)
+            if (target && !target.isReady)
             {
                 target.SetOffTrigger(triggerID, false, this);
                 anim.SetBool("inAction", false);
+                isInteracting = false;
                 m_target = null;
             }
         }
@@ -104,11 +119,10 @@ namespace RainbowCat.TheSapling.Interactables
             anim.SetBool("inMovement", false);
             m_target?.SetOffTrigger(triggerID, false, this);
             Game.manager.mouse.ChangeVisibility(true);
-            m_interactionStopped = true;
+            isInteracting = false;
         }
 
         private MinigameTarget m_target;
-        private bool m_interactionStopped;
 
         private Vector2 m_freezePos;
         private float m_freezeTimer;

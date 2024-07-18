@@ -10,6 +10,10 @@ namespace RainbowCat.TheSapling.Minigames
         public bool isReady { get; private set; }
         public bool isNecessary = true;
 
+        [Header("SFX")]
+        public string successSFX;
+        public string errorSFX;
+
         public virtual void Initialize (Minigame minigame)
         {
             anim = GetComponentInChildren<Animator>();
@@ -30,9 +34,15 @@ namespace RainbowCat.TheSapling.Minigames
 
         }
 
+        public virtual TargetStatus GetStatus()
+        {
+            return new TargetStatus(0.0f, 1.0f);
+        }
+
         protected void SetAsReady()
         {
             isReady = true;
+            SoundManager.instance.PlaySound(successSFX);
             minigame.CheckTargets();
         }
 
@@ -40,5 +50,17 @@ namespace RainbowCat.TheSapling.Minigames
         protected Animator anim;
         protected float m_timer;
         protected int m_stage;
+    }
+
+    public struct TargetStatus
+    {
+        public TargetStatus( float currentValue, float maxValue)
+        {
+            this.currentValue = currentValue;
+            this.maxValue = maxValue;
+        }
+
+        public float currentValue { get; private set; }
+        public float maxValue { get; private set; }
     }
 }

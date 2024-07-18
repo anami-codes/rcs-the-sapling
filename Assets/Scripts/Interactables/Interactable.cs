@@ -7,6 +7,7 @@ namespace RainbowCat.TheSapling.Interactables
         public HintControl hint;
         public GameObject gameObject { get; protected set; }
         public bool inAction { get; protected set; }
+        public bool isInteracting { get; protected set; }
 
         public enum InteractionType
         {
@@ -16,17 +17,20 @@ namespace RainbowCat.TheSapling.Interactables
         }
         public InteractionType interactionType { get; protected set; }
 
-        public Interactable( InteractionType type, GameObject obj, HintControl hint = null)
+        public Interactable( InteractionType type, GameObject obj, HintControl hint = null, string interactionSFX = "")
         {
             gameObject = obj;
             interactionType = type;
             this.hint = hint;
             anim = obj.GetComponent<Animator>();
+            this.interactionSFX = interactionSFX;
             inAction = false;
         }
 
         public virtual Interactable StartInteraction(InputController controller)
         {
+            SoundManager.instance.PlaySound(interactionSFX);
+
             if (interactionType == InteractionType.Click)
             {
                 OnInteraction(0.0f);
@@ -61,7 +65,13 @@ namespace RainbowCat.TheSapling.Interactables
             }
         }
 
-        public virtual void EndInteraction()
+        public virtual void EndAction()
+        {
+            inAction = false;
+            inputController = null;
+        }
+
+        public virtual void InterruptAction()
         {
             inAction = false;
             inputController = null;
@@ -69,8 +79,7 @@ namespace RainbowCat.TheSapling.Interactables
 
         public virtual void InterruptInteraction()
         {
-            inAction = false;
-            inputController = null;
+
         }
 
         public void SetStatus(bool canInteract)
@@ -104,5 +113,7 @@ namespace RainbowCat.TheSapling.Interactables
 
         protected float counter = 0.0f;
         protected bool canInteract = true;
+
+        protected string interactionSFX;
     }
 }

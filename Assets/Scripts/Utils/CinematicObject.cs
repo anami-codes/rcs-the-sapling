@@ -54,8 +54,8 @@ namespace RainbowCat.TheSapling.Utils
             sprite.color = c;
         }
 
-        private const float waitTime = 1.5f;
-        private const float delay = 1f;
+        private const float waitTime = 0.75f;
+        private const float delay = 0f;
 
         private float m_lineArtTimer;
         private float m_colorTimer;
