@@ -7,6 +7,7 @@ namespace RainbowCat.TheSapling.Minigames.Tools
     {
         [Header("Watering Can")]
         public Transform gaugeObj;
+        public float gaugeMax = 1.5f;
 
         private void Start()
         {
@@ -20,14 +21,12 @@ namespace RainbowCat.TheSapling.Minigames.Tools
         {
             if (interactable.isInteracting) UseCharge(Time.deltaTime);
 
-            if(m_charging || interactable.isInteracting)
+            if (m_charging || interactable.isInteracting)
             {
                 Vector3 gaugeScale = gaugeObj.localScale;
                 gaugeScale.y = Mathf.Lerp(0.0f, gaugeMax, currentCharge);
                 gaugeObj.localScale = gaugeScale;
             }
         }
-
-        private float gaugeMax = 0.2f;
     }
 }

@@ -15,10 +15,18 @@ namespace RainbowCat.TheSapling.Minigames
             Game.cameraController.ChangeCamera(subMinigames[currentSubMinigame].camera.name);
             subMinigames[currentSubMinigame].pottedPlant.enabled = true;
             subMinigames[currentSubMinigame].plantingGoal.enabled = true;
+
+            bool dontShowHint = false;
+
             foreach (SubMinigame subMinigame in subMinigames)
             {
                 subMinigame.plantingCollider.gameObject.SetActive(false);
+                if (!dontShowHint && subMinigame.isReady)
+                    dontShowHint = true;
             }
+
+            if(!dontShowHint)
+                subMinigames[currentSubMinigame].plantingGoal.GetComponent<PlantingGoal>().hint.StartHint();
         }
 
         public void ZoomOut()

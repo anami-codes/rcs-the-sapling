@@ -42,7 +42,7 @@ namespace RainbowCat.TheSapling.Interactables
         {
             if (maxCharge <= 0.0f) return false;
 
-            if ((this.chargerType == chargerType) && currentCharge <= 0.2f)
+            if ((this.chargerType == chargerType) && currentCharge <= 0.5f)
             {
                 m_charging = true;
                 interactable.SetStatus(false);

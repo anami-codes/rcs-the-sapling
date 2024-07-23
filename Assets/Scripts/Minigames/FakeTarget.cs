@@ -21,6 +21,7 @@ namespace RainbowCat.TheSapling.Minigames
             if(!goalIsEnabled && (otherColliders[0].isReady) && (otherColliders[1].isReady))
             {
                 goal.GetComponent<Collider2D>().enabled = true;
+                goal.hint.StartHint();
                 goalIsEnabled = true;
             }
 
