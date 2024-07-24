@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using RainbowCat.TheSapling;
 using RainbowCat.TheSapling.Utils;
 
@@ -49,6 +50,9 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMusic(int index)
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            index = 2;
+
         if (currentBGM == index) return;
 
         currentBGM = index;

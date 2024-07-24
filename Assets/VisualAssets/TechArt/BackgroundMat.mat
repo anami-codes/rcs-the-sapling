@@ -104,8 +104,8 @@ Material:
     - _PhaseTime: 0.33
     - _Phase_1: 0.33
     - _Phase_2: 0.66
-    - _Progress: 1.0021433
-    - _Radius: 10.010711
+    - _Progress: 1.000096
+    - _Radius: 10.000479
     m_Colors:
     - _CenterPos: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

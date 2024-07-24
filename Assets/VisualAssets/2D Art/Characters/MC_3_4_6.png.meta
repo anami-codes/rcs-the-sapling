@@ -287,6 +287,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: MC_2_02
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 992
+        width: 103
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b715ce9ef0010489f66884319ed775
+      internalID: -1337918203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_2_01
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 992
+        width: 118
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f95ae07c06c58c4089e3eb19a3c2d78
+      internalID: 942657776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -298,6 +340,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      MC_2_01: 942657776
+      MC_2_02: -1337918203
       MC_3_1: -742243937
       MC_3_2: 1517150716
       MC_4_1: 1517150716

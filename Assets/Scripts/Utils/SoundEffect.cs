@@ -13,7 +13,7 @@ namespace RainbowCat.TheSapling.Utils
             src.volume = volume;
             src.Play();
 
-            Destroy(gameObject, 5.0f);
+            Destroy(gameObject, 10.0f);
         }
     }
 }

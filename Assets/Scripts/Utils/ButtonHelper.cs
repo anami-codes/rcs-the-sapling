@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RainbowCat.TheSapling.InternalStructure;
 
 namespace RainbowCat.TheSapling.Utils
 {
     public class ButtonHelper : MonoBehaviour
     {
+
         public void SetOffTrigger(string triggerID)
         {
             if (Game.InGame)
@@ -16,6 +16,11 @@ namespace RainbowCat.TheSapling.Utils
         public void Exit()
         {
             Application.Quit();
+        }
+
+        public void PlaySound(string sfxId)
+        {
+            SoundManager.instance.PlaySound(sfxId);
         }
     }
 }

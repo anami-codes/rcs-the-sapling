@@ -9,6 +9,7 @@ namespace RainbowCat.TheSapling.Minigames
         public Material gaugeMat;
         public RectTransform gaugeObj;
         public RectTransform imgMarker;
+        public Image imgSprite;
 
         public GaugeBarInfo[] gaugeBarInfos;
 
@@ -22,7 +23,7 @@ namespace RainbowCat.TheSapling.Minigames
                 {
                     gaugeMat.SetColor("_FillColor", gaugeBarInfos[i].fillColor);
                     gaugeMat.SetColor("_BackgroundColor", gaugeBarInfos[i].backgroundColor);
-                    imgMarker.GetComponent<Image>().sprite = gaugeBarInfos[i].markerImage;
+                    imgSprite.GetComponent<Image>().sprite = gaugeBarInfos[i].markerImage;
                 }
             }
 

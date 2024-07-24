@@ -37,6 +37,8 @@ namespace RainbowCat.TheSapling.InternalStructure
                 if (m_cinematicObjs[i].id == objName)
                     return m_cinematicObjs[i];
             }
+
+            UnityEngine.Debug.LogError("Couldn't find CinematicObject " + objName);
             return null;
         }
 

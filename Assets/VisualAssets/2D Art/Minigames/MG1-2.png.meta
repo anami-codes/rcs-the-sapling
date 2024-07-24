@@ -291,8 +291,8 @@ TextureImporter:
       name: MG1_WateringCan_Action
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1250
+        x: 67
+        y: 1281
         width: 518
         height: 349
       alignment: 9
@@ -308,6 +308,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: MG_GaugeBar_Border
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1907
+        width: 540
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 272c3bb66ca5cf343bc5b80787050fca
+      internalID: 748125851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MG1-2_1
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1908
+        width: 540
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f28f5c587b997d488c6e01aa43f08d7
+      internalID: 1254398788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MG_GaugeBar_Fill
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1788
+        width: 539
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ed804964617f943974b6e462cb97da
+      internalID: 826531093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MG_GaugeBar_Shovel
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 1797
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2008416dada89e4abb8fb573e5ed30e
+      internalID: -1107976104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MG_GaugeBar_Leaves
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 1798
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ae9e4a64021884ca2bc784b033e106
+      internalID: 767464834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MG_GaugeBar_WateringCan
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 1798
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4782bd19c37204aa192facdb262184
+      internalID: -1220518830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -319,6 +445,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      MG1-2_1: 1254398788
       MG1_Background: 411689117
       MG1_Dirt_1: -740817696
       MG1_Dirt_2: -16804767
@@ -328,6 +455,11 @@ TextureImporter:
       MG1_WaterDrop_1: 1012602133
       MG1_WateringCan_Action: -167505202
       MG2_Leaves: 553519623
+      MG_GaugeBar_Border: 748125851
+      MG_GaugeBar_Fill: 826531093
+      MG_GaugeBar_Leaves: 767464834
+      MG_GaugeBar_Shovel: -1107976104
+      MG_GaugeBar_WateringCan: -1220518830
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
