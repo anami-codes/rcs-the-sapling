@@ -559,7 +559,7 @@ Transform:
   - {fileID: 1966323671}
   - {fileID: 664080155}
   m_Father: {fileID: 1826282163}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &24454569
 GameObject:
@@ -2589,8 +2589,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166771132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.87, y: -0.84, z: 0}
-  m_LocalScale: {x: 1.38, y: 1.38, z: 1.38}
+  m_LocalPosition: {x: 0.3, y: 0.13, z: 0}
+  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1284794572}
@@ -2637,7 +2637,7 @@ SpriteRenderer:
   m_SortingLayerID: -1870955821
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 411689117, guid: 0bc79914cf276984f99d062c3b2f0360, type: 3}
+  m_Sprite: {fileID: -1746517982, guid: 80acfb68871428c4da169837aa29159d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3568,7 +3568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215333052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.7, y: -34.9, z: -24.951399}
+  m_LocalPosition: {x: 93.979996, y: -35.1, z: -14.375578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3602,7 +3602,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9161,7 +9161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &517354426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9213,8 +9213,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 964743092}
-  m_Father: {fileID: 1826282163}
-  m_RootOrder: 0
+  m_Father: {fileID: 1512703296}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &517454221
 GameObject:
@@ -11354,8 +11354,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636172053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.87, y: -0.84, z: 0}
-  m_LocalScale: {x: 1.38, y: 1.38, z: 1.38}
+  m_LocalPosition: {x: 0.29, y: 0.17, z: 0}
+  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 619004651}
@@ -11402,7 +11402,7 @@ SpriteRenderer:
   m_SortingLayerID: -1870955821
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 411689117, guid: 0bc79914cf276984f99d062c3b2f0360, type: 3}
+  m_Sprite: {fileID: -1746517982, guid: 80acfb68871428c4da169837aa29159d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14155,7 +14155,7 @@ Transform:
   - {fileID: 87230985}
   - {fileID: 1059408077}
   m_Father: {fileID: 1826282163}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &776997178
 GameObject:
@@ -17651,7 +17651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The She Got Game mentorship program
+  m_text: And the She Got Game mentorship program
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f6119ad8401ae74799d3a8aaef1ce9a, type: 2}
   m_sharedMaterial: {fileID: -1785651996564438843, guid: 5f6119ad8401ae74799d3a8aaef1ce9a, type: 2}
@@ -26014,7 +26014,7 @@ Transform:
   - {fileID: 2075233891}
   - {fileID: 660774954}
   m_Father: {fileID: 1826282163}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294041321
 GameObject:
@@ -27598,7 +27598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a68c970de7306e84a9cb24aa387e75ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b178f3df9ce76014cb353a3443c5c144, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -28293,7 +28293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Vania "Kira" Torres
+  m_text: Manuel Alejandro Meza Marsano
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f6119ad8401ae74799d3a8aaef1ce9a, type: 2}
   m_sharedMaterial: {fileID: -1785651996564438843, guid: 5f6119ad8401ae74799d3a8aaef1ce9a, type: 2}
@@ -29353,6 +29353,7 @@ Transform:
   - {fileID: 1630176782}
   - {fileID: 1974449943}
   - {fileID: 1721489738}
+  - {fileID: 517354427}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34327,7 +34328,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sound Designer
+  m_text: 'Original Music & Sound Design
 
 '
   m_isRightToLeft: 0
@@ -35043,7 +35044,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 517354427}
   - {fileID: 1284794572}
   - {fileID: 18313587}
   - {fileID: 768583000}
@@ -36233,7 +36233,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c1e5296e9f22bd44b98fb278db889e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 199de93f4de0eb64eb05eb1ba167b013, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -38446,7 +38446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970038570
@@ -40092,7 +40092,7 @@ Transform:
   - {fileID: 476329750}
   - {fileID: 1126530847}
   m_Father: {fileID: 1826282163}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2068046833
 MonoBehaviour:

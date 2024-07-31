@@ -165,10 +165,10 @@ TextureImporter:
       name: MG2_Scissors_1
       rect:
         serializedVersion: 2
-        x: 1595
-        y: 1829
-        width: 76
-        height: 213
+        x: 1589
+        y: 1792
+        width: 91
+        height: 243
       alignment: 9
       pivot: {x: 0.5744115, y: 0.6520601}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,10 +186,10 @@ TextureImporter:
       name: MG2_Scissors_2
       rect:
         serializedVersion: 2
-        x: 1717
-        y: 1813
-        width: 143
-        height: 214
+        x: 1716
+        y: 1783
+        width: 152
+        height: 243
       alignment: 9
       pivot: {x: 0.58988047, y: 0.6489475}
       border: {x: 0, y: 0, z: 0, w: 0}
